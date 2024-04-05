@@ -1,0 +1,2 @@
+GUILD- TO GIVE PERMISSION
+.GuildMessages mean that the bot can create messages, update them, or delete thems

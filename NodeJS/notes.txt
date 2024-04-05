@@ -1,0 +1,16 @@
+//We understood the Node architecture and how it is painful and eye-scratching to write in it.
+//We made use of some packages like url to handle urls
+//We studied about HTTP methods, query parameters,  request body etc.
+//Now we are getting used to express
+//What is versioning in Express?
+//Go to your json package and check the version of express
+//It says ^4.18.3: the last part means minor fixes, the second part is a security fix (a critical and recommended bug fix), the first part is for the MAJOR RELEASE, ^ means compatible version
+
+//12: What is REST API? 
+//Rules of REST API:
+1.Client-Browser relationship, SSR is fast (server side rendering) and  CSR(client side rendering) is slow.
+2.Respect HTTP methods  - GET, POST, PUT, DELETE
+So, REST API in simple terms is 
+
+13:
+Let's build a REST API using NODE and Express (check Project_01)

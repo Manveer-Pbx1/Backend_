@@ -1,0 +1,19 @@
+{
+  "name": "learn_node_js",
+  "version": "1.0.0",
+  "description": "Let's learn about Node JS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "keywords": [
+    "nodejs",
+    "piyush",
+    "garg"
+  ],
+  "author": "manveer/piyush garg",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}

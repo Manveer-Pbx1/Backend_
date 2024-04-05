@@ -1,0 +1,105 @@
+REST API - we will have it store JSON data
+
+GET /users - List all users
+GET /users/1 - get the user with id 1 
+
+POST /users - Create new user
+
+PATCH /user/1 - Edit the user with id 1
+
+DELETE /user/1 - Delete the user with id 1
+
+//We are not using a database for now so we will use mockaroo for hardcoding the data
+
+// the path /api/users/:id has :id which means it is a variable
+
+We learned to merge routes: suppose you have the same route for different http methods, you can merge them like this:
+app.route("your route")
+.get()
+.patch()
+.delete()...and so on
+
+//14: USING POSTMAN
+We are using postman because we cannot directly perform http methods on browser
+
+We tried sending us as a user using the post method but to our surprise that didn't work so we
+used a middleware to have ourselves registered. A middleware runs everytime a request is encountered.
+we pushed the ourselves into the users using fs
+
+Middlewares:
+"jaate hue mujhse milke jana" , "the middleman"
+app.use(req,res,next) next here is the  function that calls the next middleware or the final callback if there are no more middlewares
+Inside of app.use, req.user = users[0] ; this line adds an attribute 'user' in each and every request made by any client
+why do we use middlewares?
+- To authenticate who is making requests  (security)
+- To preprocess requests before they reach the controller
+- It can check the request and if it is not up to mark, send it back
+-IT CAN EITHER FORWARD, OR END THE REQUEST
+
+A middleware has access to the following:
+1. request
+2. response
+3. next middleware
+
+//HTTP Headers
+Go to any website and inspect , then open networks tab
+You'll find about Request Headers and Response Headers
+You can also check this on Postman
+
+You can make your own Header
+
+//good practice- always add 'X' -> it states that the header is a custom header
+
+// 17: HTTP Status Codes
+- 0 - 99 : reserved
+- 100 - 199 : Informational
+- 200 - 299 : Successful 
+- 300 - 399 : Redirection
+- 400 - 499 : Client Error
+- 500 - 599 : Server Error
+- 6xx : Reserved for future use
+
+Status Code	Meaning
+Check MDN docs for status codes: 
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+If you want to create your own status code, you need to start from 600 or above
+
+// npm start , restart is too hectic, let's download an npm package called- nodemon
+
+
+// 18 - MONGODB
+
+ - What is MongoDB ?
+  A NoSQL database (not SQL)
+  Stores data in BSON format(Binary JSON), which is a binary representation of JSON objects
+  
+  Why choose MongoDB?
+  It's fast & scalable
+  Schema less / NoSQL, NoSQL means MongoDB works on documents
+  Handles large amounts of data
+  
+  MongoDB document structure:
+   {    
+    "_id" : ObjectId("5bafc3d9eceaadf9ebcdedfb"),
+    "name" : "John Doe",
+    "email" : "john@gmail.com",
+    "age" : 30,
+    "gender" : "Male"
+}
+this structure is known as a document (nosql)
+
+//19 connecting mongodb to NodeJS
+
+We have a Schema where we - define the structure
+using schema we do CRUD operation
+
+The code has become very polluted as of now
+So we'll understand the folder setup that is used:
+It is as follows:
+-controllers // the various async functions involved. it basically manipulates the model
+-models // all the Schemas are stored here
+-routes
+-views //  for frontend
+
+User calls route, route calls controller, controller changes  data using models and sends back response through routes.

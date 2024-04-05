@@ -1,0 +1,3 @@
+To upload files we need a library called - Multer
+
+To get a better understanding go to multer's npm documentation
